@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Economics Visualizer — TCO, CapEx &amp; OpEx</title>
+  <meta name="description" content="An interactive, beginner-friendly visual guide to cloud economics: TCO, CapEx, OpEx, a cost calculator, AWS examples and a buy-vs-cloud decision simulator.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="beginner">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="brand" aria-label="Cloud Economics Visualizer">
+      <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f8cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+        <rect width="40" height="40" rx="10" fill="url(#lg)"/>
+        <path d="M13 27a5 5 0 0 1 .6-9.9A7 7 0 0 1 27 15.5a5.2 5.2 0 0 1 .5 10.5z" fill="#fff" opacity=".95"/>
+        <text x="20" y="26" text-anchor="middle" font-size="9" font-weight="800" fill="#1d4ed8">$</text>
+      </svg>
+      <span>Cloud Economics <b>Visualizer</b></span>
+    </div>
+    <nav id="mainNav" class="tabs" aria-label="Sections">
+      <button data-view="learn" class="on">Learn</button>
+      <button data-view="calculator">TCO Calculator</button>
+      <button data-view="simulator">Decision Simulator</button>
+      <button data-view="aws">AWS Lab</button>
+      <button data-view="glossary">Glossary</button>
+      <button data-view="quiz">Quiz</button>
+    </nav>
+    <div class="controls">
+      <div class="seg" id="modeToggle" role="group" aria-label="Explanation level">
+        <button data-mode="beginner" class="on" data-tip="Plain-language explanations with everyday analogies.">Beginner</button>
+        <button data-mode="technical" data-tip="Adds finance and cloud terminology, formulas and detail.">Technical</button>
+      </div>
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle light / dark theme" data-tip="Toggle light / dark theme">◐</button>
+    </div>
+  </header>
+
+  <div class="disclaimer-bar" role="note">
+    <b>Illustrative estimates only.</b> All prices in this tool are simplified sample numbers for learning — they are <u>not live AWS pricing</u>. Use the official AWS Pricing Calculator for real quotes.
+  </div>
+
+  <main id="main">
+    <section id="view-learn" class="view">
+      <aside id="stepList" class="steps" aria-label="Learning modules"></aside>
+      <article id="stepContent" class="step-content" aria-live="polite"></article>
+    </section>
+    <section id="view-calculator" class="view" hidden></section>
+    <section id="view-simulator" class="view" hidden></section>
+    <section id="view-aws" class="view" hidden></section>
+    <section id="view-glossary" class="view" hidden></section>
+    <section id="view-quiz" class="view" hidden></section>
+  </main>
+
+  <footer class="foot">
+    Built with plain HTML, CSS, vanilla JavaScript and inline SVG — no frameworks, no backend, no paid APIs. Sample prices are illustrative, not live AWS pricing.
+  </footer>
+
+  <div id="tooltip" role="tooltip" hidden></div>
+  <script src="script.js"></script>
+</body>
+</html>
